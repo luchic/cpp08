@@ -6,7 +6,7 @@
 /*   By: nluchini <nluchini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:18:10 by nluchini          #+#    #+#             */
-/*   Updated: 2025/12/18 15:14:44 by nluchini         ###   ########.fr       */
+/*   Updated: 2026/01/03 20:53:21 by nluchini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,23 @@ public:
 	Span(std::initializer_list<int> init);
 
 	void addNumber(int number);
+	
+	template <typename T>
+	void addNumber(T it, T end)
+	{
+
+		auto count = std::distance(it, end);
+		if (count < 0 || _data.size() + static_cast<size_t>(count) > _capacity)
+		{
+			throw SpanOverflowException();
+		}
+		
+		for(; it != end; ++it)
+		{
+			_data.push_back(*it);
+		}
+	}
+
 	int shortestSpan() const;
 	int longestSpan() const;
 

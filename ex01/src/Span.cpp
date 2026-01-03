@@ -6,7 +6,7 @@
 /*   By: nluchini <nluchini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 12:30:48 by nluchini          #+#    #+#             */
-/*   Updated: 2025/12/18 15:16:16 by nluchini         ###   ########.fr       */
+/*   Updated: 2025/12/30 12:09:03 by nluchini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <algorithm>
 
 Span::Span() :
-	_capacity(8)
+	_capacity(0)
 {	
 }
 
@@ -71,9 +71,9 @@ int Span::longestSpan() const
 	if (_data.size() < 2)
 		throw Span::SpanOnelementException();
 
-	auto minValue = std::min_element(_data.begin(), _data.end());
-	auto maxValue = std::max_element(_data.begin(), _data.end());
-	return *maxValue - *minValue;
+	auto minit = std::min_element(_data.begin(), _data.end());
+	auto maxit = std::max_element(_data.begin(), _data.end());
+	return *maxit - *minit;
 }
 
 int Span::shortestSpan() const

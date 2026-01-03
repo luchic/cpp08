@@ -6,7 +6,7 @@
 /*   By: nluchini <nluchini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 12:22:35 by nluchini          #+#    #+#             */
-/*   Updated: 2025/12/18 15:42:45 by nluchini         ###   ########.fr       */
+/*   Updated: 2026/01/03 20:52:19 by nluchini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,15 @@ static void randomSpanAndPrint(unsigned int n, unsigned int seed,
 
 int main()
 {
-	Span sp = Span(5);
+
+	std::vector<int> tmp = {1, 2, 3, 4, 5, 6};
+	Span spIt = Span(12);
+	spIt.addNumber(tmp.begin(), tmp.end());
 	
+	print_span(spIt);
+	
+	Span sp = Span(5);
+
 	sp.addNumber(6);
 	sp.addNumber(3);
 	sp.addNumber(17);
