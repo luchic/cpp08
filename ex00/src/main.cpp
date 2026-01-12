@@ -6,7 +6,7 @@
 /*   By: nluchini <nluchini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 12:22:35 by nluchini          #+#    #+#             */
-/*   Updated: 2025/12/12 11:29:50 by nluchini         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:16:08 by nluchini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 
 	try
 	{
-		std::vector<int>::iterator it = easyfind(&vec, 3);
+		auto it = easyfind(vec, 2);
 		std::cout << "Found: " << *it << std::endl;
 	}
 	catch (const std::exception &e)
